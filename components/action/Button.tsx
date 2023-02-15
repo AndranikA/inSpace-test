@@ -27,6 +27,10 @@ export type ButtonProps = {
    */
   working?: boolean
   /**
+   * The classname of the button.
+   */
+  className?: string
+  /**
    * The label of the button.
    */
   children?: ReactNode
@@ -42,6 +46,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type = 'button',
       onClick,
       tabIndex,
+      className
     },
     ref,
   ) => {
@@ -49,7 +54,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={'bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded'}
+        className={`bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded ${className}`}
         id={id}
         type={type}
         onClick={onClick}

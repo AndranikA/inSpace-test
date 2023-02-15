@@ -13,7 +13,6 @@ type UsernameFieldType = {
   control: any;
 };
 export default function UsernameField({ control, error }: UsernameFieldType) {
-  console.log(error, 'error')
   return (
     <Controller
       name='username'
