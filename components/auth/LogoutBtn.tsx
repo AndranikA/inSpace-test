@@ -1,4 +1,4 @@
-import { Button } from '@/components/action';
+import { Button } from '@/components/designSystem/action';
 
 export default function LogoutBtn() {
   return (

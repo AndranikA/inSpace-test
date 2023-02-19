@@ -1,6 +1,6 @@
 import { Controller, FieldError } from 'react-hook-form';
 
-import { TextField } from '@/components/input';
+import { TextField } from '@/components/designSystem/input';
 
 const requiredPasswordErrorMsg = 'Password is required';
 

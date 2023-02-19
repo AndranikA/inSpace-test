@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import LoginForm from '@/components/LoginForm';
+import LoginForm from '@/components/auth/LoginForm';
 
 export default function Login() {
   return (

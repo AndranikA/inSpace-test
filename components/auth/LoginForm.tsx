@@ -1,6 +1,6 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-import { Button } from '@/components/action';
+import { Button } from '@/components/designSystem/action';
 import UsernameField from './UsernameField';
 import PasswordField from './PasswordField';
 
