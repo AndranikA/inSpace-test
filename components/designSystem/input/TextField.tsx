@@ -79,7 +79,7 @@ export const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
   ) => {
     return (
       <div className='mb-4'>
-        <label htmlFor={id ? id : name} className='block text-black text-lg font-bold mb-2'>{label}</label>
+        <label htmlFor={id ? id : name} className='block text-black text-md font-bold mb-2'>{label}</label>
         <input
           ref={ref}
           id={id ? id : name}
