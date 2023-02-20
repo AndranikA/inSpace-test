@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { Button } from '@/components/designSystem/action';
 import { Text } from '@/components/designSystem/informational';
 import { IconClose } from '@/components/designSystem/informational/Icons';
 
@@ -54,14 +53,6 @@ type ModalDialogProps = {
    */
   title: string;
   /**
-   * The details about primary action.
-   */
-  primaryAction: ModalDialogAction;
-  /**
-   * An optional seconaary action. Defaults to "Cancel."
-   */
-  secondaryAction?: ModalDialogAction;
-  /**
    * The body content of the dialog.
    */
   children?: React.ReactNode;
@@ -74,8 +65,6 @@ export function ModalDialog({
   trigger,
   title,
   children,
-  primaryAction,
-  secondaryAction,
 }: ModalDialogProps) {
   const handleOpenChange = useCallback(
     (open: boolean) => {
@@ -106,30 +95,6 @@ export function ModalDialog({
             </DialogPrimitive.Title>
             {children}
           </main>
-
-          <footer className='border-t-2 border-gray p-2'>
-            <Button
-              onClick={primaryAction.onClick}
-              disabled={primaryAction.disabled}
-              working={primaryAction.working}
-              variant={primaryAction.variant}
-            >
-              {primaryAction.label}
-            </Button>
-
-            {secondaryAction && (
-              <DialogPrimitive.Close asChild>
-                <Button
-                  variant='caution'
-                  onClick={secondaryAction.onClick}
-                  disabled={secondaryAction.disabled}
-                  working={secondaryAction.working}
-                >
-                  {secondaryAction.label}
-                </Button>
-              </DialogPrimitive.Close>
-            )}
-          </footer>
         </DialogPrimitive.Content>
       </DialogPrimitive.Portal>
     </DialogPrimitive.Root>

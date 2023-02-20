@@ -10,10 +10,6 @@ const UserAddEditModal = ({ open, user, onChange, onClose }: UserModalType) => {
       onChange={onChange}
       onClose={onClose}
       title={`${user ? 'Edit' : 'Add'} User`}
-      primaryAction={{
-        label: 'Submit',
-        onClick: () => {},
-      }}
     >
       <UserAddEditForm user={user} />
     </ModalDialog>

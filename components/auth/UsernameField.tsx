@@ -15,7 +15,7 @@ type UsernameFieldType = {
 export default function UsernameField({ control, error }: UsernameFieldType) {
   return (
     <Controller
-      name='username'
+      name='name'
       control={control}
       defaultValue=""
       render={({ field }) => (
