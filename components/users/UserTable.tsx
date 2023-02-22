@@ -1,8 +1,10 @@
-import UserTableHead from './UserTableHead';
-import UserTableRow from './UserTableRow';
 import { Text } from '@/components/designSystem/informational';
 
 import useGetUsers from '@/requestSystem/users/useGetUsers';
+
+import UserTableHead from './UserTableHead';
+import UserTableRow from './UserTableRow';
+
 import { UserType } from './types';
 
 const UserTable = ({ onEdit, onDelete }: { onEdit: (user: UserType) => void; onDelete: (user: UserType) => void }) => {

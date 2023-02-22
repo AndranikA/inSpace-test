@@ -1,6 +1,6 @@
 import { UserType } from "@/components/users/types"
 
-import { apiClient } from "../apiClient"
+import apiClient from "../apiClient"
 
 export const fetchUsers: () => Promise<UserType[]> = () => apiClient.get('users').json()
 

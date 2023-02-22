@@ -8,7 +8,7 @@ import UserSidebarContent from '@/components/users/UserSidebarContent';
 import UserTable from '@/components/users/UserTable';
 import { UserType } from '@/components/users/types';
 
-export default function Users() {
+ const Users = () => {
   const [open, setOpen] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
   const [currUser, setCurrUser] = useState<UserType | null>(null);
@@ -34,3 +34,5 @@ export default function Users() {
     </>
   );
 }
+
+export default Users

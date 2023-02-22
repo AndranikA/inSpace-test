@@ -1,9 +1,10 @@
 import { QueryClientProvider, QueryClient } from 'react-query';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-
-import '@/styles/globals.css';
 import { Roboto } from '@next/font/google'
+
+import('../requestSystem/auth/mocks')
+import '@/styles/globals.css';
 
 const roboto = Roboto({
   weight: '400',
@@ -12,7 +13,7 @@ const roboto = Roboto({
 
 const queryClient = new QueryClient()
 
-export default function App({ Component, pageProps }: AppProps) {
+ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
@@ -28,3 +29,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </QueryClientProvider>
   );
 }
+
+export default App
