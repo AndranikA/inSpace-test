@@ -1,27 +1,33 @@
-import { useForm, SubmitHandler } from 'react-hook-form';
+import { ChangeEvent } from 'react';
+import { useAtom } from 'jotai';
 
-import UsernameField from '@/components/auth/UsernameField';
-import UserIsBannedField from '@/components/users/UserIsBannedField';
+import { TextField, Checkbox } from '@/components/designSystem/input';
 
-import { UserType } from './types';
+import { filterUsers } from './state';
 
 const UserFilters = () => {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<UserType>();
+  const [{ byName, byIsBanned }, setFilterUsers] = useAtom(filterUsers);
 
-  const onSubmit: SubmitHandler<UserType> = (data) => {
-    console.log(data, errors);
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value, checked, type } = e.target;
+    setFilterUsers((p) => ({...p, [name]: type === 'checkbox' ? checked : value }));
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <UsernameField control={control} error={errors.name} />
-      <UserIsBannedField control={control} />
-    </form>
+    <div>
+      <TextField
+        type='text'
+        label='Username'
+        placeholder='Your username'
+        name='byName'
+        onChange={handleOnChange}
+        value={byName}
+      />
+      <Checkbox name='byIsBanned' onChange={handleOnChange} checked={byIsBanned}>
+        Is Banned
+      </Checkbox>
+    </div>
   );
 };
 
-export default UserFilters
+export default UserFilters;

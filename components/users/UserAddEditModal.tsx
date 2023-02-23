@@ -1,17 +1,22 @@
+import { useAtom } from 'jotai'
+
 import { ModalDialog } from '@/components/designSystem/structural';
 import UserAddEditForm from '@/components/users/userForm';
 
-import { UserModalType } from './types';
+import { currentUserState, openAddEditModalState } from './state';
 
-const UserAddEditModal = ({ open, user, onChange, onClose }: UserModalType) => {
+const UserAddEditModal = () => {
+  const [openAddEditModal, setOpenAddEditModal] = useAtom(openAddEditModalState)
+  const [currentUser, setCurrentUser] = useAtom(currentUserState)
+
   return (
     <ModalDialog
-      open={open}
-      onChange={onChange}
-      onClose={onClose}
-      title={`${user ? 'Edit' : 'Add'} User`}
+      open={openAddEditModal}
+      onChange={setOpenAddEditModal}
+      onClose={() => setCurrentUser(null)}
+      title={`${currentUser ? 'Edit' : 'Add'} User`}
     >
-      <UserAddEditForm user={user} />
+      <UserAddEditForm user={currentUser} />
     </ModalDialog>
   );
 }

@@ -1,4 +1,7 @@
 import { ReactNode } from 'react'
+
+import useGetUser from '@/requestSystem/auth/useAuth'
+
 import { Sidebar } from './Sidebar'
 
 type LayoutProps = {
@@ -6,6 +9,8 @@ type LayoutProps = {
   sidebarContent: ReactNode
 }
 export function Layout({ children, sidebarContent }: LayoutProps) {
+  useGetUser()
+  
   return (
     <main className='bg-gray-200 flex h-screen'>
       <Sidebar>

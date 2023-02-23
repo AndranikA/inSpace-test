@@ -3,4 +3,4 @@ export type LoginDataType = {
   password: string;
 };
 
-export type LoginResponseType = { name: string, token: string }
+export type LoginResponseType = { name: string }

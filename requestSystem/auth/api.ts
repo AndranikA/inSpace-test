@@ -13,6 +13,12 @@ export const login: ({ name, password }: LoginDataType) => Promise<LoginResponse
     .json();
 }
 
+export const fetchUser: () => Promise<LoginResponseType> = () => {
+  return apiClient
+    .get('user')
+    .json();
+}
+
 export const logout = () => {
   return apiClient
     .post('logout')

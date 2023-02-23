@@ -1,14 +1,12 @@
 import Image from 'next/image';
 
-import { IconDelete, IconEdit } from '@/components/designSystem/informational/Icons';
-import { Button } from '@/components/designSystem/action';
-import UserTableCell from "./UserTableCell";
+import UserTableCell from './UserTableCell';
+import DeleteUserCell from './DeleteUserCell';
+import EditUserCell from './EditUserCell';
 
-import { UserType, UserActionsType } from './types';
+import { UserType } from './types';
 
-type UserRowType = UserType & UserActionsType;
-
-const UserTableRow = ({ onEdit, onDelete, ...user }: UserRowType) => {
+const UserTableRow = ({ user }: {user: UserType }) => {
   const { id, name, avatar, isBanned, registeredAt } = user;
 
   return (
@@ -20,18 +18,10 @@ const UserTableRow = ({ onEdit, onDelete, ...user }: UserRowType) => {
       </UserTableCell>
       <UserTableCell>{isBanned ? 'Yes' : 'No'}</UserTableCell>
       <UserTableCell>{new Date(registeredAt).toDateString()}</UserTableCell>
-      <UserTableCell>
-        <Button onClick={onEdit}>
-          <IconEdit />
-        </Button>
-      </UserTableCell>
-      <UserTableCell>
-        <Button variant='caution' onClick={onDelete}>
-          <IconDelete />
-        </Button>
-      </UserTableCell>
+      <EditUserCell user={user} />
+      <DeleteUserCell user={user} />
     </li>
   );
 };
 
-export default UserTableRow
+export default UserTableRow;

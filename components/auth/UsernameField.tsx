@@ -9,7 +9,7 @@ const usernameValidationRules = {
 };
 
 type UsernameFieldType = {
-  error: FieldError | undefined;
+  error?: FieldError | undefined;
   control: any;
 };
 export default function UsernameField({ control, error }: UsernameFieldType) {

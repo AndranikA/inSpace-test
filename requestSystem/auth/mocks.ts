@@ -26,6 +26,15 @@ const worker = setupWorker(
       })
     );
   }),
+  rest.get(`${process.env.NEXT_PUBLIC_API_URL}/user`, async (req, res, ctx) => {
+
+    return res(
+      ctx.status(200),
+      ctx.json({
+        name: process.env.NEXT_PUBLIC_USER,
+      })
+    );
+  }),
   rest.post(`${process.env.NEXT_PUBLIC_API_URL}/logout`, async (req, res, ctx) => {
     return res(ctx.status(200));
   })
