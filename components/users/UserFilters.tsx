@@ -18,7 +18,7 @@ const UserFilters = () => {
       <TextField
         type='text'
         label='Username'
-        placeholder='Your username'
+        placeholder='Username'
         name='byName'
         onChange={handleOnChange}
         value={byName}

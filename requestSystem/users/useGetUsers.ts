@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query'
-import { useAtom, useSetAtom } from 'jotai';
+import { useSetAtom } from 'jotai';
 
 import { usersState } from '@/components/users/state';
 

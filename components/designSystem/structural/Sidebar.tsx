@@ -20,7 +20,7 @@ const SidebarUserInfo = () => {
 
 export function Sidebar({children}: {children: ReactNode}) {
   return (
-    <aside className='bg-white w-64 p-6 flex flex-col'>
+    <aside className='bg-white min-w-max p-6 flex flex-col'>
       <SidebarUserInfo />
       <MainNav />
       {children}
