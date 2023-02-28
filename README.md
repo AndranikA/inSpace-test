@@ -1,38 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## About
+This is a sample web application to demonstrate how modern projects should be designed and implemented.
+The project is deployed on Vercel using its GitHub integration for Next.js projects. Available under this [url](https://in-space-test.vercel.app/) Use `admin/balonka1` as username/password
+
 
 ## Getting Started
 
-First, run the development server:
+Simply run the development server and it's ready.
 
 ```bash
-npm run dev
-# or
 yarn dev
-# or
-pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+*Note*: As this is a test project Env vars are hardcoded and .env file is committed. The username/password can be set as env variables. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Tech Stack
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Teck stack is designed to be maximum flexible and suitable for large-scale projects
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- *Next.js*. We strongly believe that any new project should be initialized with Next.js. The current project is bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+- [Jotai](https://jotai.org/) is used as s state management solution
+- [React-query](https://react-query-v3.tanstack.com/) and [ky](https://www.npmjs.com/package/ky) are used for handling API requests
+- [React hook form](https://react-hook-form.com/) is used for handling forms
+- Design system is based on [Radix UI](https://www.radix-ui.com/) and [TailwindCSS](https://tailwindcss.com/) to be as scalable as possible to support design team requests easily without painful dev experience.
+- [MSW](https://mswjs.io/) is used for mocking login/logout endpoints
